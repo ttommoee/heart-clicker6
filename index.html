@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Click Counter</title>
+</head>
+<body>
+
+    <button class="heart-button" id="heartButton"></button>
+    <div class="counter" id="clickCount">Нажатий: 0</div>
+    <div class="top_left_text">text</div>
+
+    <script>
+        let count = 0; // initialize the counter
+
+        const button = document.getElementById('heartButton');
+        const displayCount = document.getElementById('clickCount');
+
+        button.addEventListener('click', () => {
+            count++; // increment the counter
+            displayCount.textContent = `Нажатий: ${count}`; // update the displayed count
+
+            button.style.transform = 'scale(1.1) rotate(-45deg)';
+            setTimeout(() => {
+                button.style.transform = 'rotate(-45deg)';
+            }, 150);
+        });
+    </script>
+
+
+</body>
+</html>
